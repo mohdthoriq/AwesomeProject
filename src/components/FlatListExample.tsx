@@ -8,9 +8,6 @@ const DATA: Item[] = Array.from({ length: 100 }, (_, i) => ({ id: i.toString(), 
 const FlatListExample = () => {
   const [refreshing, setRefreshing] = useState(false);
   const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
-  const onViewableItemsChanged = useRef(({ viewableItems }: { viewableItems: ViewToken[] }) => {
-    if (viewableItems.length > 0 && viewableItems[0].item) Alert.alert('Visible', `Item ${viewableItems[0].item.title} visible`);
-  }).current;
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -32,7 +29,6 @@ const FlatListExample = () => {
       getItemLayout={getItemLayout}
       initialNumToRender={10}
       viewabilityConfig={viewabilityConfig}
-      onViewableItemsChanged={onViewableItemsChanged}
       ListHeaderComponent={<Text style={styles.header}>Daftar Item</Text>}
       ListFooterComponent={<Text style={styles.footer}>Akhir Daftar</Text>}
     />
