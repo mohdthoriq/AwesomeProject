@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import HeroSection from './src/components/HeroSection';
-import ProfilCard from './src/components/ProfileCard';
-import LoginForm from './src/components/LoginForm';
+import HeroSection from './src/components/SimpleList';
+import ProfilCard from './src/components/FlatListExample';
+import LoginForm from './src/components/SectionListExample';
 
 const App = () => {
   return (
